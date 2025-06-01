@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your account details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            display: inline-block;
+        }
+
+        .button {
+            flex: 1;
+            padding: 10px;
+            font-size: 15px;
+            background-color: #22a7f0;
+            border: none;
+            color: #ffffff;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 0 0 0 5px;
+            width: 100px;
+        }
+
+        .button:hover {
+            background-color: #ffb300;
+            color: #22a7f0;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            border-radius: 3px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        select {
+            width: 90%;
+            height: 10px;
+            border: none;
+            outline: none;
+            padding: 10px;
+
+        }
+
+        .icerik:hover {
+            border-color: #005ef5;
+            margin: 0 0 10px 0;
+        }
+
+        input[type="password"],
+        select {
+            width: 90%;
+            height: 20px;
+            padding: 5px;
+            border: none;
+            outline: none;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: smaller;
+            color: #888;
+        }
+
+        h3 {
+            margin: 0 0 0 45px;
+        }
+
+        select {
+            height: 35px;
+        }
+
+        .icerik {
+            padding: 5px;
+            margin: 10px 0 0 0;
+        }
+
+        .image {
+            display: inline-block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="Anadiv">
+
+        <div class="container">
+            <div></div>
+            <div class="musteri">
+                <fieldset id="container-musteri">
+                    <legend>Shopper Information</legend>
+                    <fieldset class="icerik">
+                        <legend>E-Mail: </legend>
+                        <input type="text" placeholder="example@email.com">
+                    </fieldset>
+                    <fieldset class="icerik">
+                        <legend>Username: </legend>
+                        <input type="text" placeholder="JohnDoe">
+                    </fieldset>
+                    <fieldset class="icerik">
+                        <legend>Displayed Name: </legend>
+                        <input type="text" placeholder="John Doe">
+                    </fieldset>
+                    <fieldset class="icerik">
+                        <legend>Password: </legend>
+                        <input type="password" placeholder="8+ strong character">
+                    </fieldset>
+                    <fieldset class="icerik">
+                        <legend>Confirm Password: </legend>
+                        <input type="password" placeholder="confirm your password">
+                    </fieldset>
+
+                </fieldset>
+            </div>
+            <div class="fatura">
+                <fieldset>
+                    <legend>Billing Details</legend>
+                    <fieldset class="icerik">
+                        <legend>Company Name: </legend>
+                        <input type="text" placeholder="Company name">
+                    </fieldset>
+                    <fieldset class="icerik">
+                        <legend>Title: </legend>
+                        <select id="title" style="width: 95%;">
+                            <option value="0">--Select--</option>
+                            <option value="1">Mr</option>
+                            <option value="2">Mrs</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset class="icerik">
+                        <legend>First Name: </legend>
+                        <input type="text"placeholder="John">
+                    </fieldset>
+
+                    <fieldset class="icerik">
+                        <legend>Last Name: </legend>
+                        <input type="text"placeholder="Doe">
+                    </fieldset>
+
+
+                    <fieldset class="icerik">
+                        <legend>Address 1: </legend>
+                        <input type="text" placeholder="Your Adress">
+                    </fieldset>
+                    <p>Please write your full address (Street name, Apartment Number, Province, District, and Zip Code,
+                        etc.)...</p>
+
+                    <fieldset class="icerik">
+                        <legend>Zip / Postal Code: </legend>
+                        <input type="text"placeholder="Postal Code">
+                    </fieldset>
+
+                    <fieldset class="icerik">
+                        <legend>Country: </legend>
+                        <select name="countries" id="countries"></select>
+                    </fieldset>
+
+                    <script>
+                        const countries = [
+                            "-- Select --",
+                            "Afghanistan",
+                            "Åland Islands",
+                            "Albania",
+                            "Algeria",
+                            "American Samoa",
+                            "Andorra",
+                            "Angola",
+                            "Anguilla",
+                            "Antarctica",
+                            "Antigua and Barbuda",
+                            "Argentina",
+                            "Armenia",
+                            "Aruba",
+                            "Australia",
+                            "Austria",
+                            "Azerbaijan",
+                            "Bahamas",
+                            "Bahrain",
+                            "Bangladesh",
+                            "Barbados",
+                            "Belarus",
+                            "Belgium",
+                            "Belize",
+                            "Benin",
+                            "Bermuda",
+                            "Bhutan",
+                            "Bolivia",
+                            "Bonaire, Sint Eustatius and Saba",
+                            "Bosnia and Herzegovina",
+                            "Botswana",
+                            "Bouvet Island",
+                            "Brazil",
+                            "British Indian Ocean Territory",
+                            "Brunei Darussalam",
+                            "Bulgaria",
+                            "Burkina Faso",
+                            "Burundi",
+                            "Cambodia",
+                            "Cameroon",
+                            "Canada",
+                            "Canary Islands",
+                            "Cape Verde",
+                            "Cayman Islands",
+                            "Central African Republic",
+                            "Chad",
+                            "Chile",
+                            "China",
+                            "Christmas Island",
+                            "Cocos (Keeling) Islands",
+                            "Colombia",
+                            "Comoros",
+                            "Congo, Democratic Republik of the",
+                            "Congo, Republic of the",
+                            "Cook Islands",
+                            "Costa Rica",
+                            "Côte d'Ivoire",
+                            "Croatia",
+                            "Cuba",
+                            "Curaçao",
+                            "Cyprus",
+                            "Czech Republic",
+                            "Denmark",
+                            "Djibouti",
+                            "Dominica",
+                            "Dominican Republic",
+                            "East Timor",
+                            "Ecuador",
+                            "Egypt",
+                            "El Salvador",
+                            "Equatorial Guinea",
+                            "Eritrea",
+                            "Estonia",
+                            "Ethiopia",
+                            "Falkland Islands (Malvinas)",
+                            "Faroe Islands",
+                            "Fiji",
+                            "Finland",
+                            "France",
+                            "France, Metropolitan",
+                            "French Guiana",
+                            "French Polynesia",
+                            "French Southern Territories",
+                            "Gabon",
+                            "Gambia",
+                            "Georgia",
+                            "Germany",
+                            "Ghana",
+                            "Gibraltar",
+                            "Greece",
+                            "Greenland",
+                            "Grenada",
+                            "Guadeloupe",
+                            "Guam",
+                            "Guatemala",
+                            "Guernsey",
+                            "Guinea",
+                            "Guinea-Bissau",
+                            "Guyana",
+                            "Haiti",
+                            "Heard and McDonald Islands",
+                            "Honduras",
+                            "Hong Kong",
+                            "Hungary",
+                            "Iceland",
+                            "India",
+                            "Indonesia",
+                            "Iran, Islamic Republic of",
+                            "Iraq",
+                            "Ireland",
+                            "Isle Of Man",
+                            "Israel",
+                            "Italy",
+                            "Jamaica",
+                            "Japan",
+                            "Jersey",
+                            "Jordan",
+                            "Kazakhstan",
+                            "Kenya",
+                            "Kiribati",
+                            "Korea, Democratic People's Republic of",
+                            "Korea, Republic of",
+                            "Kosovo",
+                            "Kuwait",
+                            "Kyrgyzstan",
+                            "Lao People's Democratic Republic",
+                            "Latvia",
+                            "Lebanon",
+                            "Lesotho",
+                            "Liberia",
+                            "Libya",
+                            "Liechtenstein",
+                            "Lithuania",
+                            "Luxembourg",
+                            "Macau",
+                            "Macedonia, the former Yugoslav Republic of",
+                            "Madagascar",
+                            "Malawi",
+                            "Malaysia",
+                            "Maldives",
+                            "Mali",
+                            "Malta",
+                            "Marshall Islands",
+                            "Martinique",
+                            "Mauritania",
+                            "Mauritius",
+                            "Mayotte",
+                            "Mexico",
+                            "Micronesia, Federated States of",
+                            "Moldova, Republic of",
+                            "Monaco",
+                            "Mongolia",
+                            "Montenegro",
+                            "Montserrat",
+                            "Morocco",
+                            "Mozambique",
+                            "Myanmar",
+                            "Namibia",
+                            "Nauru",
+                            "Nepal",
+                            "Netherlands",
+                            "Netherlands Antilles",
+                            "New Caledonia",
+                            "New Zealand",
+                            "Nicaragua",
+                            "Niger",
+                            "Nigeria",
+                            "Niue",
+                            "Norfolk Island",
+                            "Northern Mariana Islands",
+                            "Norway",
+                            "Oman",
+                            "Pakistan",
+                            "Palau",
+                            "Palestinian Territories",
+                            "Panama",
+                            "Papua New Guinea",
+                            "Paraguay",
+                            "Peru",
+                            "Philippines",
+                            "Pitcairn",
+                            "Poland",
+                            "Portugal",
+                            "Puerto Rico",
+                            "Qatar",
+                            "Réunion",
+                            "Romania",
+                            "Russian Federation",
+                            "Rwanda",
+                            "Saint Barthélemy",
+                            "Saint Helena",
+                            "Saint Kitts and Nevis",
+                            "Saint Lucia",
+                            "Saint Martin (French part)",
+                            "Saint Pierre and Miquelon",
+                            "Saint Vincent and the Grenadines",
+                            "Samoa",
+                            "San Marino",
+                            "Sao Tome And Principe",
+                            "Saudi Arabia",
+                            "Senegal",
+                            "Serbia",
+                            "Seychelles",
+                            "Sierra Leone",
+                            "Singapore",
+                            "Sint Maarten (Dutch part)",
+                            "Slovakia",
+                            "Slovenia",
+                            "Solomon Islands",
+                            "Somalia",
+                            "South Africa",
+                            "South Georgia and the South Sandwich Islands",
+                            "South Sudan",
+                            "Spain",
+                            "Sri Lanka",
+                            "Sudan",
+                            "Suriname",
+                            "Svalbard and Jan Mayen",
+                            "Swaziland",
+                            "Sweden",
+                            "Switzerland",
+                            "Syrian Arab Republic",
+                            "Taiwan",
+                            "Tajikistan",
+                            "Tanzania, United Republic of",
+                            "Thailand",
+                            "Timor-Leste",
+                            "Togo",
+                            "Tokelau",
+                            "Tonga",
+                            "Trinidad and Tobago",
+                            "Tunisia",
+                            "Turkey",
+                            "Turkmenistan",
+                            "Turks and Caicos Islands",
+                            "Tuvalu",
+                            "Uganda",
+                            "Ukraine",
+                            "United Arab Emirates",
+                            "United Kingdom",
+                            "United States",
+                            "United States Minor Outlying Islands",
+                            "Uruguay",
+                            "Uzbekistan",
+                            "Vanuatu",
+                            "Vatican City State (Holy See)",
+                            "Venezuela",
+                            "Viet Nam",
+                            "Virgin Islands, British",
+                            "Virgin Islands, U.S.",
+                            "Wallis and Futuna",
+                            "Western Sahara",
+                            "Yemen",
+                            "Zambia",
+                            "Zimbabwe"
+                        ];
+
+                        const selectElement = document.getElementById("countries");
+
+                        countries.forEach(country => {
+                            const option = document.createElement("option");
+                            option.value = country;
+                            option.text = country;
+                            selectElement.appendChild(option);
+                        });
+                    </script>
+
+
+                    <fieldset class="icerik">
+                        <legend>State / Province / Region: </legend>
+                        <input type="text" placeholder="State/Province/Region">
+                    </fieldset>
+
+                    <fieldset class="icerik">
+                        <legend>City: </legend>
+                        <input type="text"placeholder="Your City">
+                    </fieldset>
+                    <fieldset class="icerik">
+                        <legend>Phone: </legend>
+                        <input type="text" placeholder="Your Phone Number ">
+                    </fieldset>
+
+
+                </fieldset>
+            </div>
+            <button class="button" style=" margin: 0 0 0 100px;">SAVE</button>
+            <button class="button" style="margin-left:10px">CANCEL</button>
+        </div>
+        <div class="image">
+            <img src="C:\Users\sinem\Desktop\Sinem Gürbüz\indir.jpeg" style="float: right; height: 1170px;
+            margin: 0 0 45px 0;" alt="">
+        </div>
+    </div>
+
+</body>
+
+</html>
